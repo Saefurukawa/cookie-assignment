@@ -8,7 +8,7 @@ Here are brief descriptions of each file:
 - builds the data structure to store all logged cookie information
 3. CookieAnalyzer.java
 - implements methods for finding the most active cookie per day
-- has a main function
+- has a main function that takes in command-line arguments
 4. CookieAnalyzerTest.java
 - contains unit tests for CookieAnalyzer class
 

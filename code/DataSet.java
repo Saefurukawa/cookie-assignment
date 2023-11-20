@@ -1,6 +1,7 @@
 package code;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -37,14 +38,18 @@ public class DataSet{
                 String []timeParts = timePart.split("\\+");
                 String localTime = timeParts[0]; //local time part
                 String offset = timeParts[1]; //offset part
-                CookieData cookieData = new CookieData(cookie, datePart, localTime, offset);
+
+                //make a cookiedata object
+                CookieData cookieData = new CookieData(cookie, datePart, localTime);
                 data.add(cookieData);
 
             }
             in.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		} catch (FileNotFoundException e) {
+			System.out.println("file not found");
+		}catch (IOException e) {
+			System.out.println("erorr parsing the file");
+        }
     }
     /**
      * Get data

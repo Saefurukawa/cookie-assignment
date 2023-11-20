@@ -20,7 +20,7 @@ public class CookieData {
      * @param timeString
      * @param durationString
      */
-    public CookieData(String cookie, String dateString, String timeString, String durationString){
+    public CookieData(String cookie, String dateString, String timeString){
         this.cookie = cookie;
         // Define the date format
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");

@@ -20,8 +20,14 @@ public class CookieAnalyzer {
      */
     public CookieAnalyzer(String filename){
         this.dataSet = new DataSet(filename);
-        //System.out.println(dataSet.printData());
 
+    }
+    /**
+     * Return data 
+     * @return dataSet
+     */
+    public DataSet getData(){
+        return dataSet;
     }
     /**
      * Return the list of most active cookies for that day
@@ -71,7 +77,9 @@ public class CookieAnalyzer {
     }
 
     public static void main(String[] args) {
+        //error handling
         if (args.length != 3 || !args[1].equals("-d")) {
+            System.out.println("Invalid arguments");
             System.exit(1);;
         }
         String filename = args[0]; //output file

@@ -16,7 +16,7 @@
             "request": "launch",
             "mainClass": "code.CookieAnalyzer",
             "projectName": "cookie2_8be93ce5",
-            "args": "cookie_log.csv -d 2018-12-08",
+            "args": "cookie_logg.csv -d 2023-01-02",
         }
     ]
 }

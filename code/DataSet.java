@@ -26,23 +26,7 @@ public class DataSet{
 
             //iterate through each line
 			while ((line = in.readLine()) !=null){
-                String[] parts = line.split(",");
-
-                String cookie = parts[0].trim();  // cookie string
-                String part2 = parts[1].trim();  // the rest
-    
-                String[] dateTimeParts = part2.split("T");
-                String datePart = dateTimeParts[0]; //date part
-                String timePart = dateTimeParts[1]; //the rest
-    
-                String []timeParts = timePart.split("\\+");
-                String localTime = timeParts[0]; //local time part
-                String offset = timeParts[1]; //offset part
-
-                //make a cookiedata object
-                CookieData cookieData = new CookieData(cookie, datePart, localTime);
-                data.add(cookieData);
-
+                processLine(line);
             }
             in.close();
 		} catch (FileNotFoundException e) {
@@ -50,6 +34,47 @@ public class DataSet{
 		}catch (IOException e) {
 			System.out.println("erorr parsing the file");
         }
+    }
+
+    /**
+     * Process each line in the file
+     * @param line
+     */
+    private void processLine(String line){
+        String[] parts = line.split(",");
+        //error handling
+        if (parts.length<2){
+            System.err.println("error parsing the logged file");
+            return;
+        }
+
+        String cookie = parts[0].trim();  // cookie string
+        String part2 = parts[1].trim();  // the rest
+
+        String[] dateTimeParts = part2.split("T");
+        //error handling
+        if (dateTimeParts.length<2){
+            System.err.println("error parsing the logged file");
+            return;
+        }
+
+        String datePart = dateTimeParts[0]; //date part
+        String timePart = dateTimeParts[1]; //the rest
+
+        String []timeParts = timePart.split("\\+");
+        //error handling
+        if (timeParts.length<2){
+            System.err.println("error parsing the logged file");
+            return;
+        }
+
+        String localTime = timeParts[0]; //local time part
+        //String offset = timeParts[1]; //offset part
+
+        //make a cookiedata object
+        CookieData cookieData = new CookieData(cookie, datePart, localTime);
+        data.add(cookieData);
+
     }
     /**
      * Get data
@@ -71,8 +96,4 @@ public class DataSet{
         return str;
     }
     
-
-
-
-
 }

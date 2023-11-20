@@ -13,7 +13,8 @@ Here are brief descriptions of each file:
 - contains unit tests for CookieAnalyzer class
 
 
+
 Running the program:
 
-1. Because files are written in java, compile the java files (except for testing file) first using javac 
-2. At the  cookie-assignment1 directory, run: java code.CookieAnalyzer cookie_log.csv -d 2018-12-09
+1. All java files (except for testing file) are already compiled.  
+2. At the cookie-assignment directory, run: java code.CookieAnalyzer cookie_log.csv -d 2018-12-09

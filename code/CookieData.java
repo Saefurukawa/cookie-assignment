@@ -19,7 +19,6 @@ public class CookieData {
      * @param cookie
      * @param dateString
      * @param timeString
-     * @param durationString
      */
     public CookieData(String cookie, String dateString, String timeString){
         this.cookie = cookie;
@@ -30,11 +29,11 @@ public class CookieData {
         
         try{
             // Parse the string into LocalDate object
-        LocalDate date = LocalDate.parse(dateString, dateFormatter);
-        this.date = date;
-        // Parse the string into a LocalTime object
-        LocalTime localTime = LocalTime.parse(timeString, timeFormatter);
-        this.time = localTime;
+            LocalDate date = LocalDate.parse(dateString, dateFormatter);
+            this.date = date;
+            // Parse the string into a LocalTime object
+            LocalTime localTime = LocalTime.parse(timeString, timeFormatter);
+            this.time = localTime;
 
         } catch(DateTimeParseException e){
             System.err.println("erorr parsing the date/time");

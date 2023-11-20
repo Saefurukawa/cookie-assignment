@@ -15,5 +15,5 @@ Here are brief descriptions of each file:
 
 Running the program:
 
-1. Because files are written in java, compile the java file first using javac
-2. At the root directory, run: java CookieAnalyzer cookie_log.csv -d 2018-12-09
+1. Because files are written in java, compile the java files (except for testing file) first using javac 
+2. At the  cookie-assignment1 directory, run: java code.CookieAnalyzer cookie_log.csv -d 2018-12-09

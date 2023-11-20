@@ -4,6 +4,7 @@ Here are brief descriptions of each file:
 
 1. CookieData.java
 - represents each logged cookie information, including cookie identifier, date and time
+- for now, only consider local time/date and ignore the timezone
 2. DataSet.java
 - builds the data structure to store all logged cookie information
 3. CookieAnalyzer.java
